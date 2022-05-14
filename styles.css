@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#starting-screen {
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.choose-marker {
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.choose-marker p {
+    font-size: 6rem;
+    margin: 20px;
+}
+
+.markers {
+    display: flex;
+    font-size: 4rem;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+.markers h1:hover {
+    color: #F32424;
+    text-shadow:0px 0px 30px #F32424;
+    transition: all 0.2s ease-in;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.player-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.player-name {
+    font-size: 2rem;
+}
+
+
+.player-side img {
+    width: 8rem;
+    height: 8rem;
+    margin-top: 2rem;
+
+}
+
+.board-side {
+    display: flex;
+    align-items: center;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 500px;
+    height: 500px;
+}
+
+.field {
+    border: 3px solid black;
+    font-size: 9rem;
+}
+
+.field:hover {
+    box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.4);
+}
+
+.field:nth-child(1), 
+.field:nth-child(2), 
+.field:nth-child(3) {
+    border-top: 0;
+}
+
+.field:nth-child(1), 
+.field:nth-child(2), 
+.field:nth-child(3) {
+    border-top: 0;
+}
+
+.field:nth-child(1), 
+.field:nth-child(4), 
+.field:nth-child(7) {
+    border-left: 0;
+}
+
+.field:nth-child(7), 
+.field:nth-child(8), 
+.field:nth-child(9) {
+    border-bottom: 0;
+}
+
+.field:nth-child(3), 
+.field:nth-child(6), 
+.field:nth-child(9) {
+    border-right: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding-left: 0.3rem;
+    transition: transform .5s ease-in-out;
+}
+
+footer img:hover {
+    transform: rotate(360deg);
+}
