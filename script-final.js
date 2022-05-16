@@ -30,6 +30,7 @@ const gameBoard = (() => {
 //modules that takes care of elements displayed including what is ON gameboard
 const displayController = (() => {
     gameOver = false;
+    round = 0;
     const restartButton = document.querySelector('.restart')
     const playerChar1 = document.querySelector('.player-name1')
     const playerChar2 = document.querySelector('.player-name2')
@@ -38,6 +39,7 @@ const displayController = (() => {
     let player1 = undefined;
     let player2 = undefined;
     fieldElements = document.querySelectorAll('.field');
+
     chooseMarker.forEach(item => {
         item.addEventListener('click', () => {
             startingScreen.remove();
@@ -57,6 +59,7 @@ const displayController = (() => {
         gameOver = false;
         playerChar1.innerText = "Player 1";
         playerChar2.innerText = "Player 2";
+        round = 0;
     })
 
     fieldElements.forEach((field) => {
@@ -65,10 +68,16 @@ const displayController = (() => {
                 if (field.target.textContent !== '') return;
                 gameBoard.setField(field.target.dataset.index, currentMarker)
                 updateBoard();
+                round ++;
                 if (gameController.checkWinner(currentMarker)) {
                     gameOver = true;
-                    displayWinner(currentMarker);
-                    
+                    displayWinner(currentMarker);   
+                }
+                if (round == 9) {
+                    gameOver = true;
+                    playerChar1.innerText = "It's a draw!";
+                    playerChar2.innerText = "Press restart!";
+
                 }
                 switchTurn();
             }
@@ -134,3 +143,5 @@ const gameController = (() => {
 //create a function that will switch between player1 and player2 signs, get current sign
 
 //create a reset button that pops up 
+
+//reset the board if the game ends in a draw
