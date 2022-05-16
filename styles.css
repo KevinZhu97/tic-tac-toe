@@ -57,7 +57,7 @@ main {
     
 }
 
-.player-name {
+.player-name1, .player-name2{
     font-size: 2rem;
 }
 
@@ -122,7 +122,6 @@ footer {
     left: 1%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 footer img {
@@ -134,4 +133,13 @@ footer img {
 
 footer img:hover {
     transform: rotate(360deg);
+}
+
+.restart {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 5px;
 }
